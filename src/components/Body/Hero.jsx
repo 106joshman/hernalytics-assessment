@@ -47,18 +47,19 @@ const Hero = () => {
     setElectionData(ElectValue);
     setTileText(ElectValue);
 
-    if (titleText === "Pre-Election") {
+    if (titleText || ElectValue === "Pre-Election") {
       setMapOneState(true);
       setTableState(false);
       setMapState(false);
-    } else if (titleText === "Election Data") {
+    } else if (titleText || ElectValue === "Election Data") {
       setMapState(true);
       setMapOneState(false);
       setTableState(false);
-    } else if (titleText === "Post-Election Data") {
+    } else if (titleText || ElectValue === "Post-Election Data") {
       setMapState(true);
       setMapOneState(false);
-
+    } else {
+      setMapState(true);
     }
     console.log(electionData);
   };

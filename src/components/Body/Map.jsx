@@ -30,7 +30,7 @@ const Map = () => {
         <img src={Bttn} alt="" className="bg-transparent w-[20px] h-[40px]" />
       </div>
 
-      <div className=" bg-[#1B1F30] rounded-md flex justify-center  items-center">
+      {/* <div className=" bg-[#1B1F30] rounded-md flex justify-center  items-center">
         <img src={BigMap} alt="Map of Nigeria" className="bg-transparent" />
       </div>
 
@@ -45,7 +45,7 @@ const Map = () => {
           alt="key indicator"
           className="bg-transparent lg:hidden"
         />
-      </div>
+      </div> */}
     </div>
   );
 };
