@@ -23,18 +23,18 @@ const Hero = () => {
   // const [mapState, setMapState] = useState(false);
   // const [mapState, setMapState] = useState(false);
 
-  const ElectionOptions = [
-    { value: "Pre-Election", label: "Pre-Election" },
-    { value: "Election Day", label: "Election Day Live Update" },
-    { value: "Post-Election Data", label: "Post-Election Analysis" },
-  ];
+  // const ElectionOptions = [
+  //   { value: "Pre-Election", label: "Pre-Election" },
+  //   { value: "Election Day", label: "Election Day Live Update" },
+  //   { value: "Post-Election Data", label: "Post-Election Analysis" },
+  // ];
 
-  const officeOptions = [
-    { value: "Presidential", label: "Presidential" },
-    { value: "Gubernatorial", label: "Gubernatorial" },
-    { value: "Senate", label: "Senate" },
-    { value: "House of Representatives", label: "House of Representatives" },
-  ];
+  // const officeOptions = [
+  //   { value: "Presidential", label: "Presidential" },
+  //   { value: "Gubernatorial", label: "Gubernatorial" },
+  //   { value: "Senate", label: "Senate" },
+  //   { value: "House of Representatives", label: "House of Representatives" },
+  // ];
   const [titleText, setTileText] = useState("");
 
   const handleYearChange = (e) => {
@@ -47,21 +47,32 @@ const Hero = () => {
     setElectionData(ElectValue);
     setTileText(ElectValue);
 
-    if (titleText || ElectValue === "Pre-Election") {
+    if (electionData === "Pre-Election") {
       setMapOneState(true);
-      setTableState(false);
       setMapState(false);
-    } else if (titleText || ElectValue === "Election Data") {
+    } else if (electionData == "Election Data") {
       setMapState(true);
       setMapOneState(false);
-      setTableState(false);
-    } else if (titleText || ElectValue === "Post-Election Data") {
-      setMapState(true);
-      setMapOneState(false);
-    } else {
+    } else if (electionData == "" || null) {
       setMapState(true);
     }
+
+    // if (titleText || ElectValue === "Pre-Election") {
+    //   setMapOneState(true);
+    //   setTableState(false);
+    //   setMapState(false);
+    // } else if (titleText || ElectValue === "Election Data") {
+    //   setMapState(true);
+    //   setMapOneState(false);
+    //   setTableState(false);
+    // } else if (titleText || ElectValue === "Post-Election Data") {
+    //   setMapState(true);
+    //   setMapOneState(false);
+    // } else if (titleText || ElectValue === "Pre-Election") {
+    //   setMapState(true);
+    // }
     console.log(electionData);
+    console.log(titleText);
   };
 
   const handleChange = (e) => {
@@ -179,7 +190,7 @@ const Hero = () => {
         </>
       )}
 
-      {mapState && (
+      {!mapState && (
         <>
           <Map />
           <Chart />
