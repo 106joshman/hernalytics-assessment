@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.instagram svg {
+  background: linear-gradient(
+    43.94deg,
+    #eea054 16.16%,
+    #d64763 50.11%,
+    #b62a99 83.68%
+  ) !important;
+}
+
+canvas {
+  background: transparent !important;
+}
