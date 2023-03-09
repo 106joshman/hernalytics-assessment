@@ -18,6 +18,14 @@ const Hero = () => {
     yearList.push(i);
   }
 
+  // const screenSize = window.innerWidth > 768;
+
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => {
+    setShow(!show);
+  };
+
   const [mapState, setMapState] = useState(false);
   const [mapOneState, setMapOneState] = useState(true);
   const [tableState, setTableState] = useState(false);
@@ -96,7 +104,7 @@ const Hero = () => {
 
   return (
     <section className="px-5 lg:px-14 mb-8">
-      <div className="flex justify-between">
+      <div className="flex justify-between flex-wrap">
         <div className="heading items-start lg:items-center flex-col text-white">
           <div className="headTop flex flex-col lg:flex-row lg:items-center">
             <h1 className="text-3xl font-semibold">
@@ -113,82 +121,193 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="filterOption hdden text-white flex justify-between">
-          <div className="selectOne">
-            <Select
-              className="p-3 rounded-md bg-[#181C2E] ml-5 border-2 border-[#393C4A] text-white text-base outline-none"
-              bordered={false}
-              popupClassName="text-white border-t-2"
-              defaultValue="Pre-Election"
-              onChange={handleElectionChange}
-              listHeight={400}
-              style={{
-                width: 250,
-              }}
+        <div className="filter">
+          <div className="relative my-5 flex lg:hidden w-[300px] mx-auto">
+            <button
+              className="flex justify-between w-full h-[57px] text-base border text-[#E5B805] border-[#E5B805] items-center whitespace-nowrap rounded bg-[#1C2031] px-6 pt-2.5 pb-2 font-medium transition duration-150 ease-in-out motion-reduce:transition-none"
+              type="button"
+              onClick={handleShow}
             >
-              {electionOptions.map((item, index) => {
-                return (
-                  <Select.Option className="" key={index} value={item.value}>
-                    {item.value}
-                  </Select.Option>
-                );
-              })}
-            </Select>
+              Filter Option
+              <span className="ml-2 w-2 ">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5 text-[#E5B805]"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </span>
+            </button>
           </div>
 
-          <div className="selectTwo">
-            <Select
-              className="p-3 rounded-md bg-[#181C2E] ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
-              bordered={false}
-              popupClassName="text-white border-t-2"
-              defaultValue="Presidential"
-              onChange={handleOfficeChange}
-              style={{
-                width: 250,
-              }}
-            >
-              {officeOptions.map((item, index) => {
-                return (
-                  <Select.Option
-                    className="text-white"
-                    key={index}
-                    value={item.value}
-                  >
-                    {item.value}
-                  </Select.Option>
-                );
-              })}
-            </Select>
-          </div>
+          {show && (
+            <div className="filterOptio text-white flex flex-col lg:flex-row justify-between">
+              <div className="selectOne">
+                <Select
+                  className="p-3 rounded-md bg-[#181C2E] my-2 lg:ml-5 border-2 border-[#393C4A] text-white text-base outline-none"
+                  bordered={false}
+                  popupClassName="text-white border-t-2"
+                  defaultValue="Pre-Election"
+                  onChange={handleElectionChange}
+                  listHeight={400}
+                  style={{
+                    width: 250,
+                  }}
+                >
+                  {electionOptions.map((item, index) => {
+                    return (
+                      <Select.Option
+                        className="bg-[#181C2E] my-2 border-t-2 hover:bg-[#181C2E] border-[#393C4A] rounded-none"
+                        key={index}
+                        value={item.value}
+                      >
+                        {item.value}
+                      </Select.Option>
+                    );
+                  })}
+                </Select>
+              </div>
 
-          <div className="selectThree">
-            <Select
-              className="p-3 rounded-md bg-[#181C2E] ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
-              bordered={false}
-              popupClassName="text-white border-t-2"
-              defaultValue="2023"
-              onChange={handleYearChange}
-              style={{
-                width: 250,
-              }}
-            >
-              {yearList.map((item, index) => {
-                return (
-                  <Select.Option
-                    className="text-white"
-                    key={index}
-                    value={item}
-                  >
-                    {item}
-                  </Select.Option>
-                );
-              })}
-            </Select>
+              <div className="selectTwo">
+                <Select
+                  className="p-3 rounded-md bg-[#181C2E] my-2 lg:ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
+                  bordered={false}
+                  popupClassName="text-white border-t-2"
+                  defaultValue="Presidential"
+                  onChange={handleOfficeChange}
+                  style={{
+                    width: 250,
+                  }}
+                >
+                  {officeOptions.map((item, index) => {
+                    return (
+                      <Select.Option
+                        className="bg-[#181C2E] my-2 border-t-2 hover:bg-[#181C2E] border-[#393C4A] rounded-none"
+                        key={index}
+                        value={item.value}
+                      >
+                        {item.value}
+                      </Select.Option>
+                    );
+                  })}
+                </Select>
+              </div>
+
+              <div className="selectThree">
+                <Select
+                  className="p-3 rounded-md bg-[#181C2E] my-2 lg:ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
+                  bordered={false}
+                  popupClassName="text-white border-t-2"
+                  defaultValue="2023"
+                  onChange={handleYearChange}
+                  style={{
+                    width: 250,
+                  }}
+                >
+                  {yearList.map((item, index) => {
+                    return (
+                      <Select.Option
+                        className="bg-[#181C2E] my-2 border-t-2 hover:bg-[#181C2E] border-[#393C4A] rounded-none"
+                        key={index}
+                        value={item}
+                      >
+                        {item}
+                      </Select.Option>
+                    );
+                  })}
+                </Select>
+              </div>
+            </div>
+          )}
+
+          <div className="filterOptio text-white hidden lg:flex lg:flex-row justify-between">
+            <div className="selectOne">
+              <Select
+                className="p-3 rounded-md bg-[#181C2E] my-2 lg:ml-5 border-2 border-[#393C4A] text-white text-base outline-none"
+                bordered={false}
+                popupClassName="text-white border-t-2"
+                defaultValue="Pre-Election"
+                onChange={handleElectionChange}
+                listHeight={400}
+                style={{
+                  width: 250,
+                  backgroundColor: "#181C2E !important",
+                }}
+              >
+                {electionOptions.map((item, index) => {
+                  return (
+                    <Select.Option
+                      className="bg-[#181C2E] my-2 border-t-2 hover:bg-[#181C2E] border-[#393C4A] rounded-none"
+                      key={index}
+                      value={item.value}
+                    >
+                      {item.value}
+                    </Select.Option>
+                  );
+                })}
+              </Select>
+            </div>
+
+            <div className="selectTwo">
+              <Select
+                className="p-3 rounded-md bg-[#181C2E] my-2 lg:ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
+                bordered={false}
+                popupClassName="text-white border-t-2"
+                defaultValue="Presidential"
+                onChange={handleOfficeChange}
+                style={{
+                  width: 250,
+                }}
+              >
+                {officeOptions.map((item, index) => {
+                  return (
+                    <Select.Option
+                      className="bg-[#181C2E] my-2 border-t-2 hover:bg-[#181C2E] border-[#393C4A] rounded-none"
+                      key={index}
+                      value={item.value}
+                    >
+                      {item.value}
+                    </Select.Option>
+                  );
+                })}
+              </Select>
+            </div>
+
+            <div className="selectThree">
+              <Select
+                className="p-3 rounded-md bg-[#181C2E] my-2 lg:ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
+                bordered={false}
+                popupClassName="text-white border-t-2"
+                defaultValue="2023"
+                onChange={handleYearChange}
+                style={{
+                  width: 250,
+                }}
+              >
+                {yearList.map((item, index) => {
+                  return (
+                    <Select.Option
+                      className="bg-[#181C2E] my-2 border-t-2 hover:bg-[#181C2E] border-[#393C4A] rounded-none"
+                      key={index}
+                      value={item}
+                    >
+                      {item}
+                    </Select.Option>
+                  );
+                })}
+              </Select>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="horitontalLine my-8 border border-gray-600"></div>
+      <div className="horitontalLine my-8 hidden lg:flex border border-gray-600"></div>
 
       {mapOneState && (
         <>

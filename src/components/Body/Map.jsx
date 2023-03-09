@@ -69,7 +69,7 @@ const Map = () => {
         />
       </div>
 
-      <div className="hoverDiv w-[230x] lg:w-[x] absolute -bottom-[40%] md:-bottom-[66%] lg:-bottom-[120%] left-[20%] md:left-[41%]">
+      <div className="hoverDiv w-[230x] lg:w-[x] absolute -bottom-[81%] md:-bottom-[66%] lg:-bottom-[120%] left-[20%] md:left-[41%]">
         <div className="contain bg-[#1B1F30] rounded-md border border-[#212842] p-2 lg:p-5">
           <div className="title flex justify-between uppercase text-sm">
             <p className="text-white opacity-50">vote count</p>

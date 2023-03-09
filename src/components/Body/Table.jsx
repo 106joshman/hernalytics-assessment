@@ -23,31 +23,32 @@ import APP from "../../assets/party-logo/APP.png";
 
 const Table = () => {
   return (
-    <div class="tableList flex flex-col">
-      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-          <div class="overflow-hidden px-4">
-            <table class="min-w-full text-center text-sm font-light">
-              <thead class="border-b bg-[#111421] font-medium text-white dark:border-neutral-500 dark:bg-neutral-900 justify-start text-start">
+    <div className="tableList flex flex-col">
+      <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+          <div className="overflow-hidden px-4">
+            <table className="min-w-full text-center text-sm font-light">
+              <thead className="border-b bg-[#111421] font-medium text-white dark:border-neutral-500 dark:bg-neutral-900 justify-start text-start">
                 <tr>
-                  <th scope="col" class=" text-start px-6 py-4">
+                  <th scope="col" className=" text-start px-6 py-4">
                     Candidate
                   </th>
-                  <th scope="col" class="text-start px-6 py-4">
+                  <th scope="col" className="text-start px-6 py-4">
                     Party
                   </th>
-                  <th scope="col" class=" px-6 py-4">
+                  <th scope="col" className=" px-6 py-4">
                     Gender
                   </th>
-                  <th scope="col" class=" px-6 py-4">
+                  <th scope="col" className=" px-6 py-4">
                     Running Mate
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Tinubu}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -55,23 +56,30 @@ const Table = () => {
                     />{" "}
                     Tinubu Bola Ahmed
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={APC}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   APC</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={APC}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      APC
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Atiku}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -79,23 +87,29 @@ const Table = () => {
                     />
                     Abubakar Atiku
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" ><img loading="lazy"
-                      src={PDP}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                     PDP</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      <img
+                        loading="lazy"
+                        src={PDP}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      PDP
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Okowa Arthur Ifeanyi
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Peter}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -103,23 +117,29 @@ const Table = () => {
                     />{" "}
                     Obi Peter Gregory
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" ><img loading="lazy"
-                      src={LP}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                     LP</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      <img
+                        loading="lazy"
+                        src={LP}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      LP
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Baba Ahmed Yusuf Datti
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Kwankwaso}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -127,23 +147,30 @@ const Table = () => {
                     />
                     Musa Mohammed Rabiu Kwankwaso
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={NNPP}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   NNPP</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={NNPP}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      NNPP
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Dumebi}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -151,23 +178,30 @@ const Table = () => {
                     />
                     Kachikwu Dumebi
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={ADC}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   ADC</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={ADC}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      ADC
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Umeadi}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -175,23 +209,30 @@ const Table = () => {
                     />
                     Umeadi Peter Nwanchukwu
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={APGA}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   APGA</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={APGA}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      APGA
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Yusuf}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -199,23 +240,30 @@ const Table = () => {
                     />
                     Sani Yabagi Yusuf
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={ADP}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   ADP</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={ADP}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      ADP
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Christopher}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -223,23 +271,30 @@ const Table = () => {
                     />
                     Imumolen Irene Christopher
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={APC}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   A</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={APC}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      A
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Hamza}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -247,23 +302,30 @@ const Table = () => {
                     />
                     Almustapha Hamza
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={AA}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   AA</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={AA}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      AA
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Sowore}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -271,23 +333,30 @@ const Table = () => {
                     />
                     Sowore Omoyele Stephen
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={APM}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   APM</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={APM}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      APM
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">Male</td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                    Male
+                  </td>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>
-                <tr class="border-b dark:border-neutral-500 text-white">
-                  <td class="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
-                    <img loading="lazy"
+                <tr className="border-b dark:border-neutral-500 text-white">
+                  <td className="whitespace-nowrap bg-[#1B1F30] flex items-center px-6 py-4 font-medium">
+                    <img
+                      loading="lazy"
                       src={Princess}
                       className="rounded-full items-center mr-2"
                       alt="presidential aspirant thumb-image"
@@ -295,19 +364,23 @@ const Table = () => {
                     />
                     Ojei Princess Chichi
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
-                    <span className="flex items-center" >  <img loading="lazy"
-                      src={APP}
-                      alt="party logo"
-                      srcset=""
-                      className="mr-2 items-center"
-                    />{" "}
-                   APP</span>
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4 text-start">
+                    <span className="flex items-center">
+                      {" "}
+                      <img
+                        loading="lazy"
+                        src={APP}
+                        alt="party logo"
+                        srcset=""
+                        className="mr-2 items-center"
+                      />{" "}
+                      APP
+                    </span>
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Female
                   </td>
-                  <td class="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
+                  <td className="whitespace-nowrap bg-[#1B1F30] px-6 py-4">
                     Shettima Kashim
                   </td>
                 </tr>

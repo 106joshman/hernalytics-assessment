@@ -8,6 +8,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
+  /* background-color: #181C2E; */
   font-family: "Jost", sans-serif;
   /* outline: 2px solid yellow; */
   /* border: 2px solid green; */
@@ -25,71 +27,13 @@
 canvas {
   background: transparent !important;
 }
-
-/* .filterOption { */
-div .ant-select-selector {
-  color: white;
-  font-size: 16px;
-}
-/* } */
-
-/* .hoverDiv {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: black;
-  color: white;
-  margin-bottom: 5px;
-  font-family: sans-serif;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: visibility 0s, opacity 0.5s linear;
-  transition: visibility 0s, opacity 0.5s linear;
-} */
-
-/* Hover on Parent Container */
-/* .mapParent:hover {
-  cursor: pointer;
-}
-
-.mapParent:hover .hoverDiv {
-  bottom: 65%;
-  left: 32%;
-  visibility: visible;
-  opacity: 0.7;
-} */
-
-/* -bottom-[65%] left-[5%] md:left-[32%] */
-
-/* .candidateWrap{
-  /* position: absolute; */
-/* } */
-/* :nth-of-type() */
-
-/* .candidateResult:nth-of-type(1) {
-  left: 10%;
-  position: absolute;
-}
-
-.candidateResult:nth-of-type(2) {
-  position: absolute !important;
-  left: 43%;
-  top: 40%;
-}
-
-.candidatResult:last-child {
-  left: 77%;
-  position: absolute;
-  top: 40%;
-} */
-
 /* left-[6%] md:left-[10%] */
 
-.candidateResult > div:nth-child(1) img{
+.candidateResult > div:nth-child(1) img {
   content: url(./assets/Peter.png);
 }
 
-.candidateResult > div:nth-child(2) img{
+.candidateResult > div:nth-child(2) img {
   content: url(./assets/Atiku.png);
 }
 
@@ -154,7 +98,8 @@ div .ant-select-selector {
     left: 420%;
     position: absolute;
     top: 0;
-  }}
+  }
+}
 
 /*
  */

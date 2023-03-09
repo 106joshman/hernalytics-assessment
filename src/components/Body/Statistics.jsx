@@ -59,7 +59,7 @@ const Statistics = () => {
 
   return (
     <>
-      <div className="top">
+      <div className="top mt-5">
         <h4 className="text-white uppercase mb-4">president</h4>
 
         <div className="flex items-center justify-around">
@@ -73,7 +73,7 @@ const Statistics = () => {
               <div
                 key={index}
                 id={items[1].candidate_id}
-                className="bg-white flex candidateWrap relative flex-col lg:flex-row w-[100px] md:w-[160px] lg:w-[250px] p-3 shadow-md h-[9rem] lg:h-20 justify-evenly mt-5"
+                className="bg-white flex candidateWrap relative flex-col lg:flex-row w-[100px] md:w-[160px] lg:w-[250px] p-3 shadow-[0_4px_15px_#00000026] h-[9rem] lg:h-20 justify-evenly mt-5"
               >
                 <BsFillCaretUpFill
                   className="absolute left-[34%] bottom-[90%] z-10"
