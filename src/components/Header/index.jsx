@@ -15,7 +15,7 @@ const Header = () => {
         <nav className="flex flex-row justify-between items-center">
           <div className="logo">
             <a href="">
-              <img src={BrandLogo} alt="Brand Logo" srcset="" />
+              <img loading="lazy" src={BrandLogo} alt="Brand Logo" srcset="" />
             </a>
           </div>
 

@@ -31,7 +31,7 @@ const Chart = () => {
 
   const options = {};
   return (
-    <div className="chart rounded-md p-3 lg:p-5 bg-[#1B1F30] mt-5 border border-[#393C4A] flex flex-col lg:flex-row justify-between ">
+    <div className="chart rounded-md p-3 mt-8 lg:p-5 bg-[#1B1F30] border border-[#393C4A] flex flex-col lg:flex-row justify-between ">
       <div
         className="rounded-md bg-transpaent p-2 bg-[#1B1F0] justify-center flex border border-[#272935] mx-auto lg:mx-0"
         style={{ width: 350 }}
@@ -50,6 +50,7 @@ const Chart = () => {
         </h3>
         <div className="w-[300px] lg:absolute lg:w-[22%]">
           <img
+          loading="lazy"
             src={SmallMap}
             alt="Map of Nigeria"
             className="bg-transparent relatve p-5 w-full mx-auto"
@@ -106,6 +107,7 @@ const Chart = () => {
         </div>
 
         {/* <img
+        loading="lazy"
             src={StatOne}
             alt="Map of Nigeria"
             className=" bg-transparent w-1/2"

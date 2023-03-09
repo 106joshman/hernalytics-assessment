@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex justify-start flex-col">
             <div className="flex items-center">
               <a href="">
-                <img src={BrandLogo} alt="Brand Logo" srcset="" />
+                <img loading="lazy" src={BrandLogo} alt="Brand Logo" srcset="" />
               </a>
             </div>
 

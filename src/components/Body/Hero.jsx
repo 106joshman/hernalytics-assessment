@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
-import Map from "./Map";
+// import Map from "./Map";
 import Chart from "./Chart";
 import MapOne from "./MapOne";
 import Statistics from "./Statistics";
 import Table from "./Table";
+import { Select } from "antd";
 
 const Hero = () => {
   const [years, setYears] = useState(new Date().getFullYear());
@@ -18,65 +19,61 @@ const Hero = () => {
   }
 
   const [mapState, setMapState] = useState(false);
-  const [mapOneState, setMapOneState] = useState(false);
+  const [mapOneState, setMapOneState] = useState(true);
   const [tableState, setTableState] = useState(false);
-  // const [mapState, setMapState] = useState(false);
-  // const [mapState, setMapState] = useState(false);
+  const [statisticState, setStatisticState] = useState(false);
 
-  // const ElectionOptions = [
-  //   { value: "Pre-Election", label: "Pre-Election" },
-  //   { value: "Election Day", label: "Election Day Live Update" },
-  //   { value: "Post-Election Data", label: "Post-Election Analysis" },
-  // ];
+  const electionOptions = [
+    { value: "Pre-Election", label: "Pre-Election" },
+    { value: "Election Day", label: "Election Day Live Update" },
+    { value: "Post-Election Data", label: "Post-Election Analysis" },
+  ];
 
-  // const officeOptions = [
-  //   { value: "Presidential", label: "Presidential" },
-  //   { value: "Gubernatorial", label: "Gubernatorial" },
-  //   { value: "Senate", label: "Senate" },
-  //   { value: "House of Representatives", label: "House of Representatives" },
-  // ];
-  const [titleText, setTileText] = useState("");
+  const officeOptions = [
+    { value: "Presidential", label: "Presidential" },
+    { value: "Gubernatorial", label: "Gubernatorial" },
+    { value: "Senate", label: "Senate" },
+    { value: "House of Representatives", label: "House of Representatives" },
+  ];
+  const [titleText, setTitleText] = useState("");
 
-  const handleYearChange = (e) => {
-    setYears(e.target.value);
+  const handleYearChange = (years) => {
+    setYears(years);
     console.log(years);
   };
+  // console.log(electionOptions[0])
 
-  const handleElection = (e) => {
-    const ElectValue = e.target.value;
-    setElectionData(ElectValue);
-    setTileText(ElectValue);
+  const handleElectionChange = (electionData) => {
+    // const ElectValue = value;
+    setElectionData(electionData);
+    setTitleText(electionData);
+
+    // console.log(electionData);
+    // console.log(titleText);
 
     if (electionData === "Pre-Election") {
       setMapOneState(true);
+      setTableState(false);
       setMapState(false);
-    } else if (electionData == "Election Data") {
-      setMapState(true);
+      setStatisticState(false);
+    } else if (electionData === "Election Day") {
       setMapOneState(false);
-    } else if (electionData == "" || null) {
+      setTableState(false);
+      setMapState(false);
+      setStatisticState(true);
+    } else if (electionData === "Post-Election Data") {
+      setMapOneState(false);
+      setStatisticState(false);
+      setTableState(false);
       setMapState(true);
+    } else {
+      setTableState(false);
+      setMapOneState(true);
     }
-
-    // if (titleText || ElectValue === "Pre-Election") {
-    //   setMapOneState(true);
-    //   setTableState(false);
-    //   setMapState(false);
-    // } else if (titleText || ElectValue === "Election Data") {
-    //   setMapState(true);
-    //   setMapOneState(false);
-    //   setTableState(false);
-    // } else if (titleText || ElectValue === "Post-Election Data") {
-    //   setMapState(true);
-    //   setMapOneState(false);
-    // } else if (titleText || ElectValue === "Pre-Election") {
-    //   setMapState(true);
-    // }
-    console.log(electionData);
-    console.log(titleText);
   };
 
-  const handleChange = (e) => {
-    const valueP = e.target.value;
+  const handleOfficeChange = (presidentData) => {
+    const valueP = presidentData;
     setPresidentData(valueP);
     if (
       valueP === "Presidential" ||
@@ -86,17 +83,19 @@ const Hero = () => {
     ) {
       setTableState(true);
       setMapState(false);
+      setStatisticState(false);
       setMapOneState(false);
     } else {
       setTableState(false);
       setMapState(true);
+      setStatisticState(false);
       setMapOneState(false);
     }
     console.log(presidentData);
   };
 
   return (
-    <section className="px-5 lg:px-14">
+    <section className="px-5 lg:px-14 mb-8">
       <div className="flex justify-between">
         <div className="heading items-start lg:items-center flex-col text-white">
           <div className="headTop flex flex-col lg:flex-row lg:items-center">
@@ -114,71 +113,78 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="filterOption text-white flex justify-between">
-          <select
-            name="electionData"
-            value={electionData}
-            onChange={handleElection}
-            className="p-3 rounded-md bg-[#181C2E] border-[#393C4A] outline-none w-[250px] h-[60px] border-2"
-            data-te-select-init
-          >
-            {/* {ElectionOptions.map((items, index) => {
-              <option key={index} value={items.value}>
-                {items.label}
-              </option>;
-            })} */}
-            <option className="border-b text-sm p-3" value="Pre-Election">
-              Pre-Election
-            </option>
-            <option value="Election Data">Election Day Live Updates</option>
-            <option value="Post-Election Data">Post-Election Analysis</option>
-          </select>
-
-          <select
-            name="electoral-office"
-            className="p-3 rounded-md bg-[#181C2E] border-[#393C4A] outline-none w-[250px] h-[60px] border-2 ml-5"
-            value={presidentData}
-            data-te-select-init
-            onChange={handleChange}
-          >
-            {/* {officeOptions.map((items, index) => {
-              <option key={index} value={items.value}>
-                {items.label}
-              </option>;
-            })} */}
-            <option className="border-b text-sm p-3" value="Presidential">
-              Presidential
-            </option>
-            <option className="border-b text-sm p-3" value="Gubernatorial">
-              Gubernatorial
-            </option>
-            <option className="border-b text-sm p-5 my-5" value="Senate">
-              Senate
-            </option>{" "}
-            <option
-              className="border-b text-sm p-3"
-              value="House of Representatives"
+        <div className="filterOption hdden text-white flex justify-between">
+          <div className="selectOne">
+            <Select
+              className="p-3 rounded-md bg-[#181C2E] ml-5 border-2 border-[#393C4A] text-white text-base outline-none"
+              bordered={false}
+              popupClassName="text-white border-t-2"
+              defaultValue="Pre-Election"
+              onChange={handleElectionChange}
+              listHeight={400}
+              style={{
+                width: 250,
+              }}
             >
-              House of Representatives
-            </option>
-          </select>
+              {electionOptions.map((item, index) => {
+                return (
+                  <Select.Option className="" key={index} value={item.value}>
+                    {item.value}
+                  </Select.Option>
+                );
+              })}
+            </Select>
+          </div>
 
-          <select
-            value="years"
-            className="p-3 rounded-md bg-[#181C2E] border-[#393C4A] outline-none w-[250px] h-[60px] border ml-5"
-            onChange={handleYearChange}
-            data-te-select-init
-          >
-            {yearList.map((items, index) => (
-              <option
-                className="border-t border-[#393C4A] outline-none bg-[#181C2E] text-sm p-5"
-                key={index}
-                value={items}
-              >
-                {items}
-              </option>
-            ))}
-          </select>
+          <div className="selectTwo">
+            <Select
+              className="p-3 rounded-md bg-[#181C2E] ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
+              bordered={false}
+              popupClassName="text-white border-t-2"
+              defaultValue="Presidential"
+              onChange={handleOfficeChange}
+              style={{
+                width: 250,
+              }}
+            >
+              {officeOptions.map((item, index) => {
+                return (
+                  <Select.Option
+                    className="text-white"
+                    key={index}
+                    value={item.value}
+                  >
+                    {item.value}
+                  </Select.Option>
+                );
+              })}
+            </Select>
+          </div>
+
+          <div className="selectThree">
+            <Select
+              className="p-3 rounded-md bg-[#181C2E] ml-5 border-2 border-[#393C4A] text[#393C4A] text-base outline-none"
+              bordered={false}
+              popupClassName="text-white border-t-2"
+              defaultValue="2023"
+              onChange={handleYearChange}
+              style={{
+                width: 250,
+              }}
+            >
+              {yearList.map((item, index) => {
+                return (
+                  <Select.Option
+                    className="text-white"
+                    key={index}
+                    value={item}
+                  >
+                    {item}
+                  </Select.Option>
+                );
+              })}
+            </Select>
+          </div>
         </div>
       </div>
 
@@ -190,9 +196,9 @@ const Hero = () => {
         </>
       )}
 
-      {!mapState && (
+      {mapState && (
         <>
-          <Map />
+          <MapOne />
           <Chart />
         </>
       )}
@@ -202,9 +208,11 @@ const Hero = () => {
           <Table />
         </>
       )}
-      {/* <>
-        <Statistics />
-      </> */}
+      {statisticState && (
+        <>
+          <Statistics />
+        </>
+      )}
     </section>
   );
 };
